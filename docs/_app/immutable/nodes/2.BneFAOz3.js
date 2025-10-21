@@ -1,0 +1,1 @@
+import"../chunks/DsnmJJEf.js";import"../chunks/Nl_R0d03.js";import{h as r,i as t,n}from"../chunks/C7VSCi11.js";var p=r("<h1>Parrocchia Natale del Signore</h1> <p>Via Boston 37, Torino</p>",1);function h(o){var a=p();n(2),t(o,a)}export{h as component};

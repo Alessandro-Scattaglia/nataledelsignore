@@ -1,0 +1,1 @@
+import"../chunks/DsnmJJEf.js";import"../chunks/Nl_R0d03.js";import{h as a,i as p}from"../chunks/C7VSCi11.js";var t=a("<h1>storia della parrocchia</h1>");function e(o){var r=t();p(o,r)}export{e as component};
