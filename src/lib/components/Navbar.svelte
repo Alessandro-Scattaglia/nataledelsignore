@@ -1,19 +1,51 @@
 <script>
 	import { base } from '$app/paths';
+	import { onMount } from 'svelte';
+
 	let mobileMenuOpen = false;
+	let openDropdown = null;
+	let isMobile = false;
+
+	function toggleDropdown(name) {
+		openDropdown = openDropdown === name ? null : name;
+	}
+
+	function handleMouseEnter(name) {
+		if (!isMobile) {
+			openDropdown = name;
+		}
+	}
+
+	function handleMouseLeave(name) {
+		if (!isMobile && openDropdown === name) {
+			openDropdown = null;
+		}
+	}
+
+	onMount(() => {
+		const checkMobile = () => {
+			isMobile = window.innerWidth <= 768;
+		};
+
+		checkMobile();
+		window.addEventListener('resize', checkMobile);
+
+		return () => {
+			window.removeEventListener('resize', checkMobile);
+		};
+	});
 </script>
 
 <nav id="navbar">
-	<!-- svelte-ignore a11y_no_static_element_interactions -->
 	<div class="nav-container">
 		<div class="logo">
 			<a href="{base}/">
-				<img src="{base}/img/loghi/logo_sito_acquerello_per_blog_5.gif" alt="Logo" />
+				<img src="{base}/img/loghi/favicon.png" alt="Logo" />
 			</a>
 		</div>
 
-		<!-- Hamburger per mobile -->
 		<!-- svelte-ignore a11y_click_events_have_key_events -->
+		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div class="hamburger" on:click={() => (mobileMenuOpen = !mobileMenuOpen)}>
 			<div class="line"></div>
 			<div class="line"></div>
@@ -23,49 +55,98 @@
 		<ul class="nav-links {mobileMenuOpen ? 'open' : ''}">
 			<li><a href="{base}/">Home</a></li>
 
-			<li class="dropdown">
-				<a href="{base}/chi-siamo">Chi Siamo</a>
-				<ul class="submenu">
-					<li><a href="{base}/chi-siamo/storia">Storia della parrocchia</a></li>
-					<li><a href="{base}/chi-siamo/collaboratori">I nostri collaboratori</a></li>
-					<li><a href="{base}/chi-siamo/preti">I nostri preti</a></li>
-				</ul>
+			<li
+				class="dropdown"
+				on:mouseenter={() => handleMouseEnter('chi-siamo')}
+				on:mouseleave={() => handleMouseLeave('chi-siamo')}
+			>
+				<button
+					class="dropdown-button {openDropdown === 'chi-siamo' ? 'active' : ''}"
+					on:click|preventDefault={() => toggleDropdown('chi-siamo')}
+				>
+					<span>Chi Siamo</span>
+					<div class="arrow {openDropdown === 'chi-siamo' ? 'rotated' : ''}">
+						<i class="fa-solid fa-chevron-down" style="color: #007c91;"></i>
+					</div>
+				</button>
+				{#if openDropdown === 'chi-siamo'}
+					<ul class="submenu">
+						<li><a href="{base}/chi-siamo/storia">Storia della parrocchia</a></li>
+						<li><a href="{base}/chi-siamo/collaboratori">I nostri collaboratori</a></li>
+						<li><a href="{base}/chi-siamo/preti">I nostri preti</a></li>
+					</ul>
+				{/if}
 			</li>
 
-			<li class="dropdown">
-				<a href="{base}/vita-parrocchiale">Vita parrocchiale</a>
-				<ul class="submenu">
-					<li><a href="{base}/vita-parrocchiale/liturgia">Liturgia</a></li>
-					<li><a href="{base}/vita-parrocchiale/gruppi">Gruppi</a></li>
-					<li><a href="{base}/vita-parrocchiale/catechismo">Catechismo</a></li>
-				</ul>
+			<li
+				class="dropdown"
+				on:mouseenter={() => handleMouseEnter('vita-parrocchiale')}
+				on:mouseleave={() => handleMouseLeave('vita-parrocchiale')}
+			>
+				<button
+					class="dropdown-button {openDropdown === 'vita-parrocchiale' ? 'active' : ''}"
+					on:click|preventDefault={() => toggleDropdown('vita-parrocchiale')}
+				>
+					<span>Vita parrocchiale</span>
+					<div class="arrow {openDropdown === 'vita-parrocchiale' ? 'rotated' : ''}">
+						<i class="fa-solid fa-chevron-down" style="color: #007c91;"></i>
+					</div>
+				</button>
+				{#if openDropdown === 'vita-parrocchiale'}
+					<ul class="submenu">
+						<li><a href="{base}/vita-parrocchiale/liturgia">Liturgia</a></li>
+						<li><a href="{base}/vita-parrocchiale/gruppi">Gruppi</a></li>
+						<li><a href="{base}/vita-parrocchiale/catechismo">Catechismo</a></li>
+					</ul>
+				{/if}
 			</li>
 
-			<li class="dropdown">
-				<a href="{base}/attivita">Attività & comunità</a>
-				<ul class="submenu">
-					<li><a href="{base}/attivita/oratorio">Oratorio & giovani</a></li>
-					<li><a href="{base}/attivita/carita">Carità & servizi</a></li>
-					<li><a href="{base}/attivita/eventi">Eventi</a></li>
-				</ul>
+			<li
+				class="dropdown"
+				on:mouseenter={() => handleMouseEnter('attivita')}
+				on:mouseleave={() => handleMouseLeave('attivita')}
+			>
+				<button
+					class="dropdown-button {openDropdown === 'attivita' ? 'active' : ''}"
+					on:click|preventDefault={() => toggleDropdown('attivita')}
+				>
+					<span>Attività & comunità</span>
+					<div class="arrow {openDropdown === 'attivita' ? 'rotated' : ''}">
+						<i class="fa-solid fa-chevron-down" style="color: #007c91;"></i>
+					</div>
+				</button>
+				{#if openDropdown === 'attivita'}
+					<ul class="submenu">
+						<li><a href="{base}/attivita/oratorio">Oratorio & giovani</a></li>
+						<li><a href="{base}/attivita/carita">Carità & servizi</a></li>
+						<li><a href="{base}/attivita/eventi">Eventi</a></li>
+					</ul>
+				{/if}
 			</li>
 
-			<li>
-				<a href="{base}/orari-contatti">Orari & contatti</a>
-			  </li>
-			  
+			<li><a href="{base}/orari-contatti">Orari & contatti</a></li>
+			<li><a href="{base}/news">News / Avvisi</a></li>
 
-			  <li>
-				<a href="{base}/news">News / Avvisi</a>
-			</li>
-			
-
-			<li class="dropdown">
-				<a href="{base}/donazioni">Donazioni / Sostienici</a>
-				<ul class="submenu">
-					<li><a href="{base}/donazioni/come-donare">Come donare</a></li>
-					<li><a href="{base}/donazioni/progetti-attuali">Progetti attuali</a></li>
-				</ul>
+			<li
+				class="dropdown"
+				on:mouseenter={() => handleMouseEnter('donazioni')}
+				on:mouseleave={() => handleMouseLeave('donazioni')}
+			>
+				<button
+					class="dropdown-button {openDropdown === 'donazioni' ? 'active' : ''}"
+					on:click|preventDefault={() => toggleDropdown('donazioni')}
+				>
+					<span>Donazioni / Sostienici</span>
+					<div class="arrow {openDropdown === 'donazioni' ? 'rotated' : ''}">
+						<i class="fa-solid fa-chevron-down" style="color: #007c91;"></i>
+					</div>
+				</button>
+				{#if openDropdown === 'donazioni'}
+					<ul class="submenu">
+						<li><a href="{base}/donazioni/come-donare">Come donare</a></li>
+						<li><a href="{base}/donazioni/progetti-attuali">Progetti attuali</a></li>
+					</ul>
+				{/if}
 			</li>
 		</ul>
 	</div>
@@ -79,9 +160,11 @@
 		background-color: #cce7f0;
 		color: #1a1a1a;
 		font-family: sans-serif;
-		border-radius: 20px;
+		border-radius: 0;
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 		z-index: 1000;
+		margin: 0;
+		box-sizing: border-box;
 	}
 
 	.nav-container {
@@ -93,7 +176,6 @@
 		padding: 0.75rem 1rem;
 	}
 
-	/* Logo */
 	.logo img {
 		height: 55px;
 		transition: transform 0.3s ease;
@@ -102,7 +184,6 @@
 		transform: scale(1.05);
 	}
 
-	/* Link principali */
 	.nav-links {
 		list-style: none;
 		display: flex;
@@ -112,13 +193,11 @@
 
 	.nav-links a {
 		text-decoration: none;
-		color: #007c91; /* più contrastato */
-		font-weight: 700; /* BOLD di base */
+		color: #007c91;
+		font-weight: 700;
 		position: relative;
 		transition: color 0.3s ease;
 	}
-
-	/* Effetto underline azzurro */
 	.nav-links a::after {
 		content: '';
 		position: absolute;
@@ -129,7 +208,6 @@
 		background-color: #007c91;
 		transition: width 0.3s ease;
 	}
-
 	.nav-links a:hover {
 		color: #007c91;
 	}
@@ -137,7 +215,45 @@
 		width: 100%;
 	}
 
-	/* Dropdown */
+	/* Stili per i pulsanti dropdown */
+	.dropdown-button {
+		background: none;
+		border: none;
+		color: #007c91;
+		font-weight: 700;
+		font-size: inherit;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		gap: 0.3rem;
+		padding: 0;
+		position: relative;
+		transition: color 0.3s ease;
+	}
+	.dropdown-button::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		bottom: -3px;
+		height: 2px;
+		width: 0;
+		background-color: #007c91;
+		transition: width 0.3s ease;
+	}
+	.dropdown-button:hover::after {
+		width: 100%;
+	}
+
+	.arrow {
+		font-size: 0.7rem;
+		transition: transform 0.3s ease;
+		margin-top: 2px;
+	}
+
+	.arrow.rotated {
+		transform: rotate(180deg);
+	}
+
 	.dropdown {
 		position: relative;
 	}
@@ -152,12 +268,8 @@
 		min-width: 200px;
 		border-radius: 10px;
 		box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-		opacity: 0;
-		transform: translateY(-10px);
-		pointer-events: none;
-		transition: all 0.5s ease;
+		z-index: 999;
 	}
-
 	.submenu::before {
 		content: '';
 		position: absolute;
@@ -166,12 +278,6 @@
 		width: 100%;
 		height: 20px;
 		background: transparent;
-	}
-
-	.dropdown:hover .submenu {
-		opacity: 1;
-		transform: translateY(0);
-		pointer-events: auto;
 	}
 	.submenu li a {
 		display: block;
@@ -182,7 +288,6 @@
 		color: #007c91;
 	}
 
-	/* Hamburger */
 	.hamburger {
 		display: none;
 		flex-direction: column;
@@ -196,11 +301,28 @@
 		border-radius: 2px;
 	}
 
-	/* Mobile */
 	@media screen and (max-width: 768px) {
+		.nav-container {
+			padding: 0.75rem 0.5rem;
+		}
+
 		.hamburger {
 			display: flex;
+			flex-direction: column;
+			gap: 5px;
+			cursor: pointer;
+			margin-left: auto;
+			margin-right: 0.5rem;
 		}
+
+		.hamburger .line {
+			width: 25px;
+			height: 3px;
+			background: #1a1a1a;
+			border-radius: 2px;
+		}
+
+		/* Menu principale mobile */
 		.nav-links {
 			position: absolute;
 			top: 100%;
@@ -209,24 +331,62 @@
 			background: #cce7f0;
 			flex-direction: column;
 			align-items: center;
+			text-align: center;
 			max-height: 0;
 			overflow: hidden;
 			transition: max-height 0.3s ease;
+			border-radius: 20px;
+			padding: 0 1rem;
 		}
+
 		.nav-links.open {
 			max-height: 1000px;
 		}
+
 		.nav-links li {
 			margin: 0.5rem 0;
+			width: 100%;
 		}
+
+		.nav-links li a,
+		.nav-links li .dropdown-button {
+			display: block;
+			width: 90%;
+			margin: 0 auto;
+			text-align: center;
+			justify-content: center;
+		}
+
+		/* Sottomenu */
 		.dropdown .submenu {
 			position: static;
-			box-shadow: none;
 			background: #e6f3f7;
-			opacity: 1;
-			transform: translateY(0);
-			pointer-events: auto;
-			border-radius: 0;
+			border-radius: 20px;
+			box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+			width: 90%;
+			margin: 0 auto;
+			text-align: center;
+		}
+
+		.submenu li {
+			width: 100%;
+		}
+
+		.submenu li a {
+			display: block;
+			padding: 0.5rem 1rem;
+			text-align: center;
+		}
+
+		/* Disattiva underline animato */
+		.nav-links a::after,
+		.dropdown-button::after {
+			display: none;
+		}
+
+		/* Freccia nel mobile */
+		.arrow {
+			display: inline-block;
 		}
 	}
 </style>
