@@ -1,0 +1,1 @@
+import"../chunks/DsnmJJEf.js";import"../chunks/C2lYKwIy.js";import{h as a,i as p}from"../chunks/CPTq11Nm.js";var t=a("<h1>vita parrocchiale</h1>");function e(o){var r=t();p(o,r)}export{e as component};
