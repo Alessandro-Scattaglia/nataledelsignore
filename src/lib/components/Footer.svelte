@@ -50,7 +50,7 @@
 						rel="noopener noreferrer"
 						aria-label="facebook"
 					>
-						<i class="fa-brands fa-facebook fa-2xl" style="color: #007c91"></i>
+						<i class="fa-brands fa-facebook fa-2xl" style="color: #026798"></i>
 					</a>
 					<a
 						href="https://www.instagram.com/parrocchiands/"
@@ -58,7 +58,7 @@
 						rel="noopener noreferrer"
 						aria-label="instagram"
 					>
-						<i class="fa-brands fa-instagram fa-2xl" style="color: #007c91"></i>
+						<i class="fa-brands fa-instagram fa-2xl" style="color: #026798"></i>
 					</a>
 					<a
 						href="https://wa.me/393401234567"
@@ -66,7 +66,7 @@
 						rel="noopener noreferrer"
 						aria-label="whatsapp"
 					>
-						<i class="fa-brands fa-whatsapp fa-2xl" style="color: #007c91;"></i>
+						<i class="fa-brands fa-whatsapp fa-2xl" style="color: #026798;"></i>
 					</a>
 					<a
 						href="https://www.youtube.com/channel/UCimGbVpSKU-d7X4eIvm0ZAw"
@@ -74,7 +74,7 @@
 						rel="noopener noreferrer"
 						aria-label="whatsapp"
 					>
-						<i class="fa-brands fa-youtube fa-2xl" style="color: #007c91;"></i>
+						<i class="fa-brands fa-youtube fa-2xl" style="color: #026798;"></i>
 					</a>
 				</div>
 			</div>
@@ -132,7 +132,7 @@
 	.footer-section h3 {
 		font-weight: bold;
 		margin-bottom: 0.5rem;
-		color: #007c91;
+		color: #026798;
 	}
 
 	.footer-section p,
@@ -150,7 +150,7 @@
 
 	.footer-section a:hover {
 		text-decoration: underline;
-		color: #005f6b;
+		color: #026798;
 	}
 
 	.social-icons {
@@ -168,14 +168,14 @@
 
 	.social-icons i:hover {
 		transform: scale(1.2);
-		color: #005f6b;
+		color: #026798;
 	}
 
 	.footer-bottom {
 		text-align: center;
 		margin-top: 2rem;
 		font-size: 0.9rem;
-		color: #004850;
+		color: #026798;
 	}
 
 	@media screen and (max-width: 768px) {

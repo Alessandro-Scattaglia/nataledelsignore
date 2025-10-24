@@ -66,7 +66,7 @@
 				>
 					<span>Chi Siamo</span>
 					<div class="arrow {openDropdown === 'chi-siamo' ? 'rotated' : ''}">
-						<i class="fa-solid fa-chevron-down" style="color: #007c91;"></i>
+						<i class="fa-solid fa-chevron-down" style="color: #026798;"></i>
 					</div>
 				</button>
 				{#if openDropdown === 'chi-siamo'}
@@ -89,7 +89,7 @@
 				>
 					<span>Vita parrocchiale</span>
 					<div class="arrow {openDropdown === 'vita-parrocchiale' ? 'rotated' : ''}">
-						<i class="fa-solid fa-chevron-down" style="color: #007c91;"></i>
+						<i class="fa-solid fa-chevron-down" style="color: #026798;"></i>
 					</div>
 				</button>
 				{#if openDropdown === 'vita-parrocchiale'}
@@ -112,7 +112,7 @@
 				>
 					<span>Attività & comunità</span>
 					<div class="arrow {openDropdown === 'attivita' ? 'rotated' : ''}">
-						<i class="fa-solid fa-chevron-down" style="color: #007c91;"></i>
+						<i class="fa-solid fa-chevron-down" style="color: #026798;"></i>
 					</div>
 				</button>
 				{#if openDropdown === 'attivita'}
@@ -138,7 +138,7 @@
 				>
 					<span>Donazioni / Sostienici</span>
 					<div class="arrow {openDropdown === 'donazioni' ? 'rotated' : ''}">
-						<i class="fa-solid fa-chevron-down" style="color: #007c91;"></i>
+						<i class="fa-solid fa-chevron-down" style="color: #026798;"></i>
 					</div>
 				</button>
 				{#if openDropdown === 'donazioni'}
@@ -193,7 +193,7 @@
 
 	.nav-links a {
 		text-decoration: none;
-		color: #007c91;
+		color: #026798;
 		font-weight: 700;
 		position: relative;
 		transition: color 0.3s ease;
@@ -205,11 +205,11 @@
 		bottom: -3px;
 		height: 2px;
 		width: 0;
-		background-color: #007c91;
+		background-color: #026798;
 		transition: width 0.3s ease;
 	}
 	.nav-links a:hover {
-		color: #007c91;
+		color: #026798;
 	}
 	.nav-links a:hover::after {
 		width: 100%;
@@ -219,7 +219,7 @@
 	.dropdown-button {
 		background: none;
 		border: none;
-		color: #007c91;
+		color: #026798;
 		font-weight: 700;
 		font-size: inherit;
 		cursor: pointer;
@@ -237,7 +237,7 @@
 		bottom: -3px;
 		height: 2px;
 		width: 0;
-		background-color: #007c91;
+		background-color: #026798;
 		transition: width 0.3s ease;
 	}
 	.dropdown-button:hover::after {
@@ -285,7 +285,7 @@
 	}
 	.submenu li a:hover {
 		background: #cce7f0;
-		color: #007c91;
+		color: #026798;
 	}
 
 	.hamburger {
