@@ -1,1 +1,0 @@
-import"../chunks/DsnmJJEf.js";import"../chunks/DLjfr28R.js";import{h as t,i,$ as m,n as r}from"../chunks/DotgI2Y6.js";import{h as p}from"../chunks/CPgtxRn_.js";var n=t('<h1>Chi siamo</h1> <p>Questa è la pagina "chi siamo".</p>',1);function $(a){var o=n();p(e=>{m.title="Chi siamo"}),r(2),i(a,o)}export{$ as component};
