@@ -3,7 +3,6 @@ const dev = process.env.NODE_ENV === 'development';
 
 export default {
   kit: {
-    addDir: 'app',
     adapter: adapter({
       pages: 'docs',
       assets: 'docs',
@@ -11,6 +10,6 @@ export default {
     }),
     paths: {
       base: dev ? '' : '/nataledelsignore'
-    }
+    },
   }
 };

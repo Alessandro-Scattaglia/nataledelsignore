@@ -1,0 +1,1 @@
+import"../chunks/DsnmJJEf.js";import"../chunks/DLjfr28R.js";import{h as t,i as a}from"../chunks/DotgI2Y6.js";var p=t("<h1>orari e contatti</h1>");function e(o){var r=p();a(o,r)}export{e as component};
