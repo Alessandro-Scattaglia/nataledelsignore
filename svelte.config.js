@@ -1,15 +1,21 @@
 import adapter from '@sveltejs/adapter-static';
-const dev = process.env.NODE_ENV === 'development';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'; // ✅ questo è l'import giusto
 
-export default {
+const dev = process.argv.includes('dev');
+
+const config = {
   kit: {
     adapter: adapter({
-      pages: 'docs',
+      pages: 'docs',      // cartella dove verrà esportato il sito
       assets: 'docs',
       fallback: null
     }),
     paths: {
-      base: dev ? '' : '/nataledelsignore'
+      base: dev ? '' : '/nataledelsignore' // il nome del tuo repo GitHub Pages
     },
-  }
+    appDir: 'app' // evita l'underscore "_app" che GitHub non serve
+  },
+  preprocess: vitePreprocess()
 };
+
+export default config;
