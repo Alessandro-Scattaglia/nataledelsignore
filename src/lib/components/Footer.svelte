@@ -185,5 +185,9 @@
 		.social-icons {
 			justify-content: center;
 		}
+		.footer-left img {
+		
+		max-height: 100px;
+	}
 	}
 </style>

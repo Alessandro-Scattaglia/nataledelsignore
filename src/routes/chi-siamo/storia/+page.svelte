@@ -1,6 +1,29 @@
 <script>
 	import { base } from '$app/paths';
+	import { onMount } from 'svelte';
+	let showButton = false;
+
+	onMount(() => {
+		const handleScroll = () => {
+			showButton = window.scrollY > 300; // appare dopo 300px
+		};
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	});
+
+	function scrollToTop() {
+		window.scrollTo({ top: 0, behavior: 'smooth' });
+	}
 </script>
+
+<a
+	href="{base}/chi-siamo/storia"
+	class="torna {showButton ? 'show' : ''}"
+	on:click|preventDefault={scrollToTop}
+	aria-label="Torna su"
+>
+	<i class="fa-solid fa-arrow-up"></i>
+</a>
 
 <div class="pagina-storia">
 	<header class="header-storia">
@@ -13,9 +36,9 @@
 
 	<main class="timeline-storia">
 		<section id="dmichele" class="blocco-storia">
-			<div class="pallino" style="background-color: #E65263;"></div>
+			<div class="pallino"></div>
 			<div class="contenuto">
-				<h2 style="color: #E65263;">Gli anni di don Michele (1965-1970)</h2>
+				<h2>Gli anni di don Michele (1965-1970)</h2>
 
 				<div class="storia-riga sinistra">
 					<div class="testo">
@@ -86,16 +109,15 @@
 							Campagnoli, per una nuova chiesa. Tale progetto viene approvato dalla commissione di arte
 							sacra di Torino e di Roma, quindi dall'autorità civile.
 						</p>
-						<a href="#top" class="torna">Torna su ↑</a>
 					</div>
 				</div>
 			</div>
 		</section>
 
 		<section id="dsebastiano" class="blocco-storia">
-			<div class="pallino" style="background-color: #4A90E2;"></div>
+			<div class="pallino"></div>
 			<div class="contenuto">
-				<h2 style="color: #E65263;" id="dsebastiano">Gli anni di don Sebastiano (1970-1991)</h2>
+				<h2 id="dsebastiano">Gli anni di don Sebastiano (1970-1991)</h2>
 
 				<div class="storia-riga sinistra">
 					<div class="testo">
@@ -233,12 +255,11 @@
 							consentire agli ammalati in carrozzella e agli anziani di accedere alla chiesa. Il 7
 							novembre 1983 nasce Cultura Popolare famiglia, da un'idea di d. Lino
 							Baracco.Nell'estate del 1985, a fianco della chiesa, si ricava un piccolo campo giochi
-							per i ragazzi che diviene utilissimo per le attività di oratorio.
-							Nel luglio 1986, in occasione del riordino normativo voluto dai Vescovi italiani, la
-							parrocchia Santo Natale assume un nuovo titolo: <strong>Natale del Signore</strong>.
-							Il 17 novembre 1985 viene consacrato in Duomo il <strong
-								>diacono Giuseppe Bertani</strong
-							>. Nel 1986 il viceparroco, <strong>don Renzo Gariglio</strong>, è nominato parroco a
+							per i ragazzi che diviene utilissimo per le attività di oratorio. Nel luglio 1986, in
+							occasione del riordino normativo voluto dai Vescovi italiani, la parrocchia Santo
+							Natale assume un nuovo titolo: <strong>Natale del Signore</strong>. Il 17 novembre
+							1985 viene consacrato in Duomo il <strong>diacono Giuseppe Bertani</strong>. Nel 1986
+							il viceparroco, <strong>don Renzo Gariglio</strong>, è nominato parroco a
 							Cavallermaggiore, e nel mese di settembre 1987 la comunità accoglie il nuovo vice
 							parroco <strong>don Alberto Chiadò</strong>. Nel mese di novembre 1988, con la
 							partecipazione dell'Arcivescovo Anastasio Ballestrero, s'inaugura, in occasione del
@@ -247,7 +268,6 @@
 						</p>
 					</div>
 				</div>
-
 
 				<div class="storia-riga destra">
 					<div class="testo">
@@ -258,35 +278,175 @@
 							giugno viene sistemato dietro l'altare il quadro di Mario Caffaro Rore, raffigurante
 							una moderna natività in armonia con l'architettura sobria della chiesa.
 						</p>
-						<a href="#top" class="torna">Torna su ↑</a>
 					</div>
 				</div>
 			</div>
 		</section>
 
 		<section id="dromolo" class="blocco-storia">
-			<div class="pallino" style="background-color: #7ED321;"></div>
+			<div class="pallino"></div>
 			<div class="contenuto">
-				<h2 style="color: #7ED321;">Gli anni di don Romolo (1991-2014)</h2>
-				<p>
-					Il 12 ottobre 1991 don Romolo Chiabrando fa il suo ingresso come terzo parroco, portando
-					con sé don Giovanni Payno.
-				</p>
-				<p>Anni di intensa attività pastorale e di crescita spirituale per tutta la comunità.</p>
-				<a href="#top" class="torna">Torna su ↑</a>
+				<h2>Gli anni di don Romolo (1991-2014)</h2>
+
+				<div class="storia-riga sinistra">
+					<div class="testo">
+						<p>
+							Il 12 ottobre 1991 <strong>don Romolo Chiabrando</strong> fa il suo ingresso come
+							terzo parroco, portando con sé il suo compagno di studi e collaboratore
+							<strong>don Giovanni Payno</strong>.
+						</p>
+					</div>
+					<div class="immagine">
+						<img src="{base}/img/chi-siamo/Immagine15.jpg" alt="Ingresso don Romolo" />
+					</div>
+				</div>
+
+				<div class="storia-riga destra">
+					<div class="immagine">
+						<img src="{base}/img/chi-siamo/immagine5.jpg" alt="Festa battezzati" />
+					</div>
+					<div class="testo">
+						<p>
+							Il 1992 inizia la tradizionale Messa annuale di ringraziamento per gli anniversari
+							significativi di matrimonio, preceduta da una serata di riflessione e seguita da un
+							momento conviviale.
+						</p>
+					</div>
+				</div>
+
+				<div class="storia-riga sinistra">
+					<div class="testo">
+						<p>
+							Sempre nel 1992 il CPP viene eletto per la prima volta dai fedeli e dai membri dei
+							gruppi parrocchiali. Le elezioni si ripetono nel 1997 e 2002. Nel 1993 iniziano i
+							corsi di preparazione alla Cresima per adulti, gestiti da laici.
+						</p>
+						<p>
+							Nell'ottobre 1994 prende vita il Gruppo Famiglia, attivo fino al 2006. Si forma anche
+							il Gruppo Giovani Coppie, con l'obiettivo di diventare il futuro Gruppo Famiglie.
+						</p>
+						<p>
+							Già nel 1993 don Romolo introduce la <em>Lectio divina</em>, con incontri guidati da
+							don Arturo Giaccone. I momenti forti dell'anno (Avvento e Quaresima) saranno
+							caratterizzati da proposte settimanali di 'Lectio' guidate da don Romolo.
+						</p>
+					</div>
+					<div class="immagine">
+						<img src="{base}/img/chi-siamo/40 SR RAGAZ.JPG" alt="Visita pastorale" />
+					</div>
+				</div>
+
+				<div class="storia-riga destra">
+					<div class="immagine">
+						<img src="{base}/img/chi-siamo/MOSTRA 081.jpg" alt="Mostra parrocchia" />
+					</div>
+					<div class="testo">
+						<p>
+							Il 28 maggio 1994 viene istituita la '<em>Festa del Battesimo</em>' per i battezzati
+							dell'anno precedente e le loro famiglie. Dal 2007 vengono invitati anche i nonni.
+						</p>
+						<p>
+							Il vuoto lasciato da don Alberto Chiadò viene colmato dall'arrivo di <strong
+								>don Giuseppe Sotgiu</strong
+							>, nuovo viceparroco.
+						</p>
+					</div>
+				</div>
+
+				<div class="storia-riga sinistra">
+					<div class="testo">
+						<p>
+							Dal 1995 la comunità si attiva in assemblee straordinarie, iniziative culturali, Messa
+							per ammalati, catechesi, Corsi per animatori del Vangelo e Gruppi del Vangelo.
+						</p>
+						<p>
+							Nel 2001 diventa viceparroco <strong>don Roberto Gottardo</strong>. Dal 2002 seguono
+							iniziative per famiglie, periodico parrocchiale e visite pastorali.
+						</p>
+					</div>
+					<div class="immagine">
+						<img src="{base}/img/chi-siamo/foto4.JPG" alt="Attività comunità" />
+					</div>
+				</div>
+
+				<div class="storia-riga destra">
+					<div class="immagine">
+						<img src="{base}/img/chi-siamo/immagine6.jpg" alt="Attività parrocchiale" />
+					</div>
+					<div class="testo">
+						<p>
+							Negli anni 2004-2014 proseguono attività culturali, corsi, missioni, gruppi giovani,
+							feste parrocchiali, visite del vescovo Nosiglia e ordini diaconali. Nel 2014 la
+							comunità saluta don Romolo, che diventa rettore del Santuario di Cristo Re.
+						</p>
+					</div>
+				</div>
 			</div>
 		</section>
 
 		<section id="dpiero" class="blocco-storia">
-			<div class="pallino" style="background-color: #9013FE;"></div>
+			<div class="pallino"></div>
 			<div class="contenuto">
-				<h2 style="color: #9013FE;">Gli anni di don Piero (2014 - oggi)</h2>
-				<p>
-					Il 19 ottobre 2014 don Piero fa il suo ingresso come parroco, affiancato da don Roberto
-					come vicario episcopale.
-				</p>
-				<p>Il tema della festa di quest’anno è «La fede è bellezza».</p>
-				<a href="#top" class="torna">Torna su ↑</a>
+				<h2>Gli anni di don Piero (2014 a oggi)</h2>
+
+				<div class="storia-riga sinistra">
+					<div class="testo">
+						<p>
+							Il 19 ottobre 2014 d. Piero fa il suo ingresso come parroco, con d. Roberto come
+							Vicario episcopale.
+						</p>
+						<p>
+							Il titolo della festa di quest'anno è <strong>La fede è bellezza</strong>.
+						</p>
+					</div>
+					<div class="immagine">
+						<img src="{base}/img/chi-siamo/P1210355.jpg" alt="Ingresso don Piero" />
+					</div>
+				</div>
+
+				<div class="storia-riga destra">
+					<div class="testo">
+						<p>
+							Nell'ottobre 2015, in occasione della Festa Parrocchiale dal titolo <strong
+								>Pensare in grande: il coraggio della fede</strong
+							>, si tiene la prima edizione della <strong>StraNatale</strong>, una passeggiata per
+							il quartiere con giochi e indovinelli.
+						</p>
+						<p>
+							Nell'aprile 2016 la parrocchia accoglie tre migranti Munir, Francis e Adam, che grazie
+							soprattutto ai giovani riescono ad integrarsi nella comunità.
+						</p>
+					</div>
+				</div>
+
+				<div class="storia-riga sinistra">
+					<div class="testo">
+						<p>
+							Nel 2016 si attua per la prima volta la 24 ore di adorazione e preghiera, e nella
+							quaresima una raccolta di prodotti per l'igiene personale per i carcerati.
+						</p>
+						<p>Nel 2017 si festeggiano i 50 anni della Parrocchia.</p>
+						<p>
+							Durante il 2020, a causa della pandemia di Coronavirus e del lockdown (9-3 al 16-5),
+							la parrocchia organizza iniziative online per tutta la comunità, giovani, ragazzi e
+							bambini.
+						</p>
+					</div>
+				</div>
+
+				<div class="storia-riga destra">
+					<div class="testo">
+						<p>
+							Il 4 settembre 2022, con una grande festa e pranzo comunitario in cortile, salutiamo
+							don Alberto che l'11 settembre fa il suo ingresso come parroco nella parrocchia Regina
+							Mundi di Nichelino.
+						</p>
+						<p>
+							Il 10 giugno 2023 viene ordinato prete Fabio Barotto, che da un anno presta servizio
+							nella nostra parrocchia, riportando la figura del viceparroco.
+						</p>
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>
@@ -308,17 +468,17 @@
 
 	.header-storia {
 		position: relative;
-		width: 99.5vw;
+		width: 99.7vw;
 		margin-left: calc(-50vw + 50%);
-		height: 70vh;
+		height: calc(100vh - 5rem);
 		overflow: hidden;
 		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		text-align: center;
-		margin-top: -5rem; /* assicura che non ci sia spazio sopra */
-		padding-top: 0; /* rimuove eventuale padding */
+		margin-top: -5rem;
+		padding-top: 0;
 	}
 
 	.sfondo-header {
@@ -381,11 +541,13 @@
 		height: 16px;
 		border-radius: 50%;
 		box-shadow: 0 0 0 4px #fff;
+		background-color: #fecc00;
 	}
 
 	.contenuto h2 {
 		font-size: 1.6rem;
 		margin-bottom: 0.8rem;
+		color: #fecc00;
 	}
 
 	.contenuto p {
@@ -395,15 +557,33 @@
 	}
 
 	.torna {
-		display: inline-block;
-		margin-top: 0.5rem;
-		font-size: 0.9rem;
-		color: #888;
+		position: fixed;
+		bottom: 2rem;
+		right: 2rem;
+		background: #fecb00d0;
+		color: white;
+		padding: 0.5rem 1rem;
+		border-radius: 15px;
 		text-decoration: none;
+		font-weight: bold;
+		opacity: 0;
+		transition:
+			opacity 0.4s,
+			transform 0.3s,
+			background 0.3s;
+		transform: translateY(20px);
+		z-index: 1000;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+	}
+
+	.torna.show {
+		opacity: 1;
+		pointer-events: auto;
+		transform: translateY(0);
 	}
 
 	.torna:hover {
-		color: var(--accent, #e65263);
+		background: #fecc00;
 	}
 
 	/* Layout alternato testo-immagine */
@@ -471,9 +651,9 @@
 	blockquote::after {
 		content: '“';
 		font-size: 3rem;
-		color: #e65263;
+		color: #026798;
 		position: absolute;
-		opacity: 0.3;
+		opacity: 0.8;
 	}
 
 	blockquote::before {
@@ -493,15 +673,20 @@
 			padding: 2rem 1rem;
 		}
 
-		/* Header con immagine di sfondo */
 		.header-storia {
-			height: auto;
+			height: 40vh;
 			flex-direction: column;
-			padding: 4rem 1rem;
+			padding: 0;
+			width: 100vw;
+			margin-left: -3rem;
+			margin-right: 0;
 		}
 
 		.sfondo-header {
-			height: 100%;
+			width: 100vw;
+			height: 50vh;
+			object-fit: cover;
+			display: block;
 		}
 
 		.contenuto-header {
@@ -537,7 +722,6 @@
 			font-size: 1rem;
 		}
 
-		/* Layout coerente: testo sopra immagine */
 		.storia-riga {
 			flex-direction: column;
 			gap: 1rem;
@@ -564,6 +748,9 @@
 
 		/* Pulsante torna su */
 		.torna {
+			bottom: 1.5rem;
+			right: 1.5rem;
+			padding: 0.4rem 0.8rem;
 			font-size: 0.85rem;
 		}
 
