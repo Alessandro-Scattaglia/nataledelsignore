@@ -1,0 +1,38 @@
+:root {
+  --color-primary: #002440;
+  --color-secondary: #006a9c;
+  --color-accent: #fec000;
+  --color-green: #96d500;
+  --color-red: #e65263;
+  --color-dark-red: #9c0000;
+  --color-text: #464646;
+  --color-bg: #ffffff;
+  --color-bg-light: #f5f7fa;
+  --shadow-soft: 0 10px 30px rgba(0, 36, 64, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at 80% -20%, #d9e8f3 0%, var(--color-bg) 45%);
+  color: var(--color-text);
+  font-family: "Source Sans 3", sans-serif;
+}
+
+a {
+  color: var(--color-secondary);
+}
+
+img,
+iframe {
+  max-width: 100%;
+}

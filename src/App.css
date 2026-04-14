@@ -1,0 +1,527 @@
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  background: var(--color-bg);
+  border-bottom: 1px solid rgba(0, 36, 64, 0.08);
+}
+
+.header-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.header-kicker {
+  margin: 0;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+.header-inner h1 {
+  margin: 0.25rem 0;
+  color: var(--color-primary);
+  font-family: "Merriweather", serif;
+  font-size: clamp(1.4rem, 2vw, 2.1rem);
+}
+
+.header-subtitle {
+  margin: 0;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.nav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 120;
+  background: var(--color-primary);
+  box-shadow: 0 6px 18px rgba(0, 36, 64, 0.26);
+}
+
+.nav-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0.4rem 1rem;
+}
+
+.brand {
+  color: #f1f6f9;
+  font-family: "Merriweather", serif;
+  letter-spacing: 0.03em;
+  font-size: 0.95rem;
+}
+
+.menu-toggle {
+  display: none;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: transparent;
+  border-radius: 8px;
+  width: 44px;
+  height: 36px;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 2px;
+  background: #ffffff;
+  margin: 4px 0;
+  transition: all 0.2s ease;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.94);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  padding: 0.75rem 0.65rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.nav-link.is-active {
+  background: var(--color-accent);
+  color: #1b1b1b;
+}
+
+.app-main {
+  flex: 1;
+  width: min(1220px, 100%);
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+.page {
+  display: grid;
+  gap: 1rem;
+  animation: pageFadeIn 0.3s ease;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-hero {
+  background: linear-gradient(120deg, #eef4f8 0%, #ffffff 50%, #f6f8fa 100%);
+  border: 1px solid rgba(0, 36, 64, 0.08);
+  border-radius: 18px;
+  padding: 1.2rem;
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.page-hero-home {
+  background: linear-gradient(125deg, #e8f2f8 0%, #ffffff 40%, #fef8e7 100%);
+}
+
+.page-hero-history {
+  background: linear-gradient(130deg, #f2f4f7 0%, #fff7f7 55%, #f5f7fa 100%);
+}
+
+.page-hero-calendar {
+  background: linear-gradient(130deg, #edf5ff 0%, #ffffff 52%, #f7fff1 100%);
+}
+
+.page-hero-album {
+  background: linear-gradient(125deg, #f5f0e7 0%, #ffffff 45%, #f0f6ff 100%);
+}
+
+.eyebrow {
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.page h2 {
+  margin: 0.25rem 0 0.5rem;
+  color: var(--color-primary);
+  font-family: "Merriweather", serif;
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+  line-height: 1.2;
+}
+
+.page h3 {
+  margin: 0 0 0.5rem;
+  color: var(--color-primary);
+  font-family: "Merriweather", serif;
+  font-size: 1.1rem;
+}
+
+.page h4 {
+  margin: 0;
+  font-family: "Merriweather", serif;
+  color: var(--color-primary);
+  font-size: 1rem;
+}
+
+.page p,
+.page li {
+  color: var(--color-text);
+  line-height: 1.52;
+}
+
+.page ul {
+  margin: 0.2rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.grid-two {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.content-section {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.section-title-wrap {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.section-subtitle {
+  margin: 0;
+  color: var(--color-dark-red);
+  font-weight: 700;
+}
+
+.info-card,
+.plain-card {
+  border-radius: 16px;
+  padding: 1rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 36, 64, 0.08);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.info-card:hover,
+.plain-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(0, 36, 64, 0.14);
+}
+
+.plain-card a,
+.info-card a {
+  transition: color 0.2s ease;
+}
+
+.plain-card a:hover,
+.info-card a:hover {
+  color: var(--color-primary);
+}
+
+.accent-secondary {
+  background: linear-gradient(140deg, #0d74a3 0%, #005079 100%);
+  color: #ffffff;
+}
+
+.accent-secondary h3,
+.accent-secondary h4,
+.accent-secondary p,
+.accent-secondary li,
+.accent-secondary a {
+  color: #ffffff;
+}
+
+.accent-green {
+  background: linear-gradient(140deg, #8fca00 0%, #709f00 100%);
+  color: #ffffff;
+}
+
+.accent-green h3,
+.accent-green h4,
+.accent-green p,
+.accent-green li,
+.accent-green a {
+  color: #ffffff;
+}
+
+.accent-gold {
+  background: linear-gradient(140deg, #fec000 0%, #dfa800 100%);
+}
+
+.accent-red {
+  background: linear-gradient(145deg, #e65263 0%, #b83443 100%);
+  color: #ffffff;
+}
+
+.accent-red h3,
+.accent-red h4,
+.accent-red p,
+.accent-red li,
+.accent-red a {
+  color: #ffffff;
+}
+
+.accent-light {
+  background: var(--color-bg-light);
+}
+
+.quote-box {
+  margin: 0;
+  background: #ffffff;
+  border-left: 4px solid var(--color-accent);
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  font-family: "Merriweather", serif;
+  color: var(--color-primary);
+}
+
+.stack-cards,
+.timeline-cards {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.timeline-cards {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.period-label {
+  margin: 0;
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.calendar-frame-wrap {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 36, 64, 0.1);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.calendar-frame-wrap.small {
+  max-width: 700px;
+}
+
+.calendar-frame-wrap.full {
+  width: 100%;
+}
+
+.note-right {
+  text-align: right;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+.small-muted {
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+  color: #6c7a86;
+}
+
+.img-placeholder {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px dashed rgba(0, 36, 64, 0.35);
+  color: rgba(0, 36, 64, 0.8);
+  background: repeating-linear-gradient(
+      -45deg,
+      rgba(0, 36, 64, 0.03),
+      rgba(0, 36, 64, 0.03) 10px,
+      rgba(255, 255, 255, 0.8) 10px,
+      rgba(255, 255, 255, 0.8) 20px
+    ),
+    #f2f7fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  padding: 1rem;
+}
+
+.cpp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.85rem;
+}
+
+.cpp-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 36, 64, 0.1);
+  border-radius: 14px;
+  padding: 0.8rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.cpp-card p {
+  margin: 0.7rem 0 0;
+  font-weight: 600;
+}
+
+.album-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.85rem;
+}
+
+.site-footer {
+  background: var(--color-primary);
+  color: #f2f4f7;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1.2fr 0.9fr;
+  gap: 1rem;
+  padding: 1.2rem;
+}
+
+.footer-col {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 0.65rem;
+}
+
+.footer-col h3 {
+  margin: 0 0 0.45rem;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: "Merriweather", serif;
+}
+
+.footer-col p {
+  margin: 0.15rem 0;
+  font-size: 0.95rem;
+}
+
+.footer-col a {
+  color: #d4e9f5;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer-col a:hover {
+  opacity: 0.85;
+}
+
+.logo-placeholder {
+  width: 90px;
+  height: 90px;
+  border-radius: 18px;
+  border: 1px dashed rgba(255, 255, 255, 0.45);
+  display: grid;
+  place-items: center;
+  color: #d9ebf7;
+  font-family: "Merriweather", serif;
+}
+
+.facebook-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+
+.fb-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--color-primary);
+  display: grid;
+  place-items: center;
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+}
+
+@media (max-width: 1024px) {
+  .site-footer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .page-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .site-nav {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1rem;
+    display: grid;
+    justify-content: stretch;
+    transition: max-height 0.2s ease;
+  }
+
+  .site-nav.is-open {
+    max-height: 700px;
+    padding-bottom: 0.8rem;
+  }
+
+  .nav-link {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    margin-top: 0.35rem;
+    text-align: left;
+  }
+
+  .app-main {
+    padding: 0.9rem;
+  }
+
+  .grid-two {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    padding: 0.8rem 0.9rem;
+  }
+
+  .plain-card,
+  .info-card {
+    padding: 0.85rem;
+  }
+}
