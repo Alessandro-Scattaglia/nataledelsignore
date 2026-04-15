@@ -1,0 +1,20 @@
+.img-placeholder {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px dashed rgba(0, 36, 64, 0.35);
+  color: rgba(0, 36, 64, 0.8);
+  background: repeating-linear-gradient(
+      -45deg,
+      rgba(0, 36, 64, 0.03),
+      rgba(0, 36, 64, 0.03) 10px,
+      rgba(255, 255, 255, 0.8) 10px,
+      rgba(255, 255, 255, 0.8) 20px
+    ),
+    #f2f7fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  padding: 1rem;
+}

@@ -1,0 +1,15 @@
+.page-hero-home {
+  background: linear-gradient(125deg, #e8f2f8 0%, #ffffff 40%, #fef8e7 100%);
+}
+
+.home-hero-image {
+  height: 260px;
+}
+
+.home-whatsapp-image {
+  height: 130px;
+}
+
+.home-event-image {
+  height: 220px;
+}

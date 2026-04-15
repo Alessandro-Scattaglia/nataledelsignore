@@ -1,0 +1,10 @@
+.page-hero-history {
+  background: linear-gradient(130deg, #f2f4f7 0%, #fff7f7 55%, #f5f7fa 100%);
+}
+
+.period-label {
+  margin: 0;
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
