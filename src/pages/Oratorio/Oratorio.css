@@ -3,5 +3,8 @@
 }
 
 .oratorio-locandina-image {
-  height: 280px;
+  height: clamp(360px, 48vw, 620px);
+  width: auto;
+  max-width: 100%;
+  justify-self: center;
 }

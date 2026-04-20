@@ -11,5 +11,8 @@
 }
 
 .home-event-image {
-  height: 220px;
+  height: clamp(320px, 44vw, 500px);
+  width: auto;
+  max-width: 100%;
+  justify-self: center;
 }

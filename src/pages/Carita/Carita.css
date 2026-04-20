@@ -3,5 +3,8 @@
 }
 
 .carita-gallery-image {
-  height: 210px;
+  height: clamp(300px, 40vw, 460px);
+  width: auto;
+  max-width: 100%;
+  justify-self: center;
 }

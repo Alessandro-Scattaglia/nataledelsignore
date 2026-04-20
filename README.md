@@ -83,7 +83,9 @@ In GitHub:
 
 - Settings
 - Pages
-- Source: branch `gh-pages`
+- Build and deployment: `GitHub Actions`
+
+Il workflow è in `.github/workflows/deploy-pages.yml` e pubblica la cartella `dist`.
 
 ## Dominio personalizzato (CNAME)
 
