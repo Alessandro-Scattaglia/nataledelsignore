@@ -94,16 +94,6 @@ function Footer() {
 						<YoutubeIcon className="social-chip-icon" />
 						YouTube
 					</a>
-					<a
-						className="social-chip"
-						href="http://bit.ly/CanaleNDS"
-						target="_blank"
-						rel="noreferrer"
-						aria-label="Canale WhatsApp Parrocchia Natale del Signore"
-					>
-						<WhatsappIcon className="social-chip-icon" />
-						WhatsApp
-					</a>
 				</div>
 
 				<h3 className="footer-subheading">Unita Pastorale</h3>

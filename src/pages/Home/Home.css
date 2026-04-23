@@ -1,18 +1,418 @@
-.page-hero-home {
-  background: linear-gradient(125deg, #e8f2f8 0%, #ffffff 40%, #fef8e7 100%);
+.home {
+  width: 100%;
+  max-width: 100vw;
+  margin: 0;
+  padding: clamp(16px, 2vw, 25.6px) clamp(9.6px, 1.4vw, 22.4px);
+  display: grid;
+  gap: clamp(19.2px, 2vw, 28.8px);
+  box-sizing: border-box;
+}
+h4 {
+  margin: 0;
+  color: var(--color-primary);
+  font-family: "Merriweather", serif;
+  font-size: clamp(14.4px, 1.8vw, 10px);
 }
 
-.home-hero-image {
-  height: 260px;
+.home-hero {
+  position: relative;
+  isolation: isolate;
+  min-height: calc(100vh - 230px);
+  border-radius: 26px;
+  border: 1px solid rgba(0, 36, 64, 0.1);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(150, 213, 0, 0.2), transparent 42%),
+    radial-gradient(
+      circle at 88% 14%,
+      rgba(0, 106, 156, 0.18),
+      transparent 40%
+    ),
+    linear-gradient(145deg, #f7fbff 0%, #ffffff 58%, #fcf8ea 100%);
+  box-shadow: 0 20px 46px rgba(0, 36, 64, 0.12);
+  padding: clamp(16px, 2vw, 32px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: clamp(16px, 1.8vw, 25.6px);
+  overflow: hidden;
 }
 
-.home-whatsapp-image {
-  height: 130px;
+.hero-visual {
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 36, 64, 0.12);
+  box-shadow: 0 16px 34px rgba(0, 36, 64, 0.16);
+  min-height: 320px;
+  align-self: stretch;
 }
 
-.home-event-image {
-  height: clamp(320px, 44vw, 500px);
-  width: auto;
-  max-width: 100%;
-  justify-self: center;
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.home-hero-modern::before {
+  content: "";
+  position: absolute;
+  inset: -20% auto auto -10%;
+  width: clamp(220px, 35vw, 420px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  z-index: -1;
+}
+
+.hero-copy {
+  display: grid;
+  align-content: center;
+  gap: 14.4px;
+  min-width: 0;
+}
+
+.hero-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11.84px;
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.hero-copy h1 {
+  margin: 0;
+  color: var(--color-primary);
+  font-family: "Merriweather", serif;
+  line-height: 1.1;
+  font-size: clamp(28.8px, 4vw, 48px);
+}
+
+.hero-description {
+  margin: 0;
+  max-width: 52ch;
+  line-height: 1.55;
+  font-size: clamp(16px, 1.2vw, 17.6px);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11.2px;
+  margin-top: 6.4px;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  border-radius: 999px;
+  padding: 8.8px 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+
+.btn-primary {
+  color: #ffffff;
+  background: linear-gradient(120deg, #006a9c 0%, #004a6f 100%);
+  box-shadow: 0 8px 20px rgba(0, 74, 111, 0.34);
+}
+
+.btn-secondary {
+  color: var(--color-primary);
+  border: 1px solid rgba(0, 36, 64, 0.2);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+  transform: translateY(-1px);
+}
+
+.weekly-section {
+  display: grid;
+  grid-template-columns: 1fr 650px;
+  gap: 14.4px;
+}
+
+.oratorio-panel {
+  background: linear-gradient(165deg, #f9fbff 0%, #ffffff 72%);
+  border: 1px solid rgba(0, 36, 64, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 10px 24px rgba(0, 36, 64, 0.1);
+  padding: 14.4px;
+  display: grid;
+  grid-template-columns: minmax(280px, 250px) minmax(0, 1fr);
+  align-items: start;
+  gap: 14.4px;
+}
+
+.oratorio-flyer-wrap {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.volantino-oratorio {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 36, 64, 0.12);
+  box-shadow: 0 16px 36px rgba(0, 36, 64, 0.14);
+}
+
+.oratorio-copy {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.oratorio-tag {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 11.84px;
+  color: #667b89;
+  font-weight: 700;
+}
+
+.oratorio-panel h2 {
+  margin: 0;
+  color: var(--color-primary);
+  font-family: "Merriweather", serif;
+}
+
+.oratorio-panel p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.oratorio-panel a {
+  margin-top: 3.2px;
+  font-weight: 700;
+}
+
+.weekly-board {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid rgba(0, 36, 64, 0.12);
+  box-shadow: 0 16px 36px rgba(0, 36, 64, 0.14);
+  padding: clamp(14.4px, 1.6vw, 19.2px);
+  display: grid;
+  gap: 13.6px;
+  align-content: start;
+}
+
+.weekly-period {
+  margin: 0;
+  font-size: 12.8px;
+  color: #7a8a96;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.weekly-board h2 {
+  margin: 4px 0;
+  color: var(--color-primary);
+  font-family: "Merriweather", serif;
+  font-size: clamp(18.4px, 2vw, 23.2px);
+}
+
+.weekly-note {
+  margin: 0;
+  color: #607483;
+  line-height: 1.45;
+}
+
+.weekly-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10.4px;
+}
+
+.weekly-list li {
+  background: linear-gradient(140deg, #f8fbff 0%, #ffffff 100%);
+  border: 1px solid rgba(0, 36, 64, 0.08);
+  border-radius: 12px;
+  padding: 9.6px 11.2px;
+  display: grid;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 9.6px;
+  align-items: start;
+}
+
+.weekly-when {
+  font-weight: 700;
+  color: var(--color-secondary);
+  font-size: 14.4px;
+}
+
+.weekly-list h3 {
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 15.68px;
+}
+
+.weekly-list p {
+  margin: 3.2px 0 0;
+  line-height: 1.4;
+  font-size: 15.2px;
+}
+
+.weekly-updated {
+  margin: 0;
+  font-size: 13.12px;
+  color: #7a8a96;
+  text-align: right;
+}
+
+.quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12.8px;
+}
+
+.quick-link {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid rgba(0, 36, 64, 0.1);
+  border-radius: 14px;
+  padding: 14.4px;
+  padding-right: 48px;
+  box-shadow: 0 10px 24px rgba(0, 36, 64, 0.1);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 7.2px;
+}
+
+.quick-link .quick-link-icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17.6px;
+  color: var(--color-secondary);
+  background: rgba(0, 106, 156, 0.1);
+  border: 1px solid rgba(0, 106, 156, 0.18);
+}
+
+.quick-link h3 {
+  margin: 0;
+  font-family: "Merriweather", serif;
+  color: var(--color-primary);
+  font-size: 16.32px;
+}
+
+.quick-link p {
+  margin: 7.2px 0 10.4px;
+  line-height: 1.45;
+}
+
+.quick-link a {
+  font-weight: 700;
+}
+
+.agenda-panel {
+  background: #ffffff;
+  border: 1px solid rgba(0, 36, 64, 0.1);
+  border-radius: 18px;
+  padding: clamp(14.4px, 1.7vw, 20.8px);
+  box-shadow: 0 10px 24px rgba(0, 36, 64, 0.1);
+  display: grid;
+  gap: 12.8px;
+}
+.quick-link-col-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12.8px;
+}
+
+.quick-link-col-stack .quick-link {
+  flex: 1;
+}
+.banco-alimentare-img {
+  width: 90%;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 36, 64, 0.12);
+  box-shadow: 0 12px 28px rgba(0, 36, 64, 0.14);
+}
+
+.agenda-copy h2 {
+  margin: 0;
+  color: var(--color-primary);
+  font-family: "Merriweather", serif;
+  font-size: 19.2px;
+}
+
+.agenda-copy p {
+  margin: 5.6px 0 0;
+  line-height: 1.45;
+}
+
+.agenda-panel iframe {
+  border-radius: 12px;
+}
+
+@media (max-width: 1050px) {
+  .home-hero-modern {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-visual {
+    min-height: 250px;
+  }
+
+  .weekly-board {
+    max-width: 100%;
+  }
+
+  .weekly-section {
+    grid-template-columns: 1fr;
+  }
+
+  .oratorio-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .oratorio-flyer-wrap {
+    justify-content: center;
+  }
+
+  .quick-links-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .home-modern {
+    padding: 12.8px;
+  }
+
+  .home-hero-modern {
+    border-radius: 20px;
+    padding: 14.4px;
+  }
+
+  .weekly-list li {
+    grid-template-columns: 1fr;
+    gap: 5.6px;
+  }
+
+  .quick-links-grid {
+    grid-template-columns: 1fr;
+  }
 }

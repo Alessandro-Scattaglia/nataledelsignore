@@ -1,4 +1,4 @@
-.page {
+/* .page {
   display: grid;
   gap: 1rem;
   animation: pageFadeIn 0.3s ease;
@@ -102,12 +102,6 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.info-card:hover,
-.plain-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px rgba(0, 36, 64, 0.14);
-}
-
 .plain-card a,
 .info-card a {
   transition: color 0.2s ease;
@@ -116,53 +110,6 @@
 .plain-card a:hover,
 .info-card a:hover {
   color: var(--color-primary);
-}
-
-.accent-secondary {
-  background: linear-gradient(140deg, #0d74a3 0%, #005079 100%);
-  color: #ffffff;
-}
-
-.accent-secondary h3,
-.accent-secondary h4,
-.accent-secondary p,
-.accent-secondary li,
-.accent-secondary a {
-  color: #ffffff;
-}
-
-.accent-green {
-  background: linear-gradient(140deg, #8fca00 0%, #709f00 100%);
-  color: #ffffff;
-}
-
-.accent-green h3,
-.accent-green h4,
-.accent-green p,
-.accent-green li,
-.accent-green a {
-  color: #ffffff;
-}
-
-.accent-gold {
-  background: linear-gradient(140deg, #fec000 0%, #dfa800 100%);
-}
-
-.accent-red {
-  background: linear-gradient(145deg, #e65263 0%, #b83443 100%);
-  color: #ffffff;
-}
-
-.accent-red h3,
-.accent-red h4,
-.accent-red p,
-.accent-red li,
-.accent-red a {
-  color: #ffffff;
-}
-
-.accent-light {
-  background: var(--color-bg-light);
 }
 
 .quote-box {
@@ -237,4 +184,4 @@
   .info-card {
     padding: 0.85rem;
   }
-}
+} */
