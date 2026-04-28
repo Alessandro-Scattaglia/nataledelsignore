@@ -1,3 +1,52 @@
 .contatti-hero-image {
   height: 230px;
 }
+
+.social {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.social li svg {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.anchor {
+  text-decoration: none;
+  list-style: none;
+  color: #000;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+  .social li {
+    gap: 10px;
+    margin-top: 16px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .social li {
+    align-items: flex-start;
+    margin-top: 14px;
+    font-size: 0.96rem;
+  }
+
+  .social li svg {
+    width: 22px;
+    height: 22px;
+    margin-top: 1px;
+  }
+}

@@ -20,8 +20,8 @@ const gruppi = [
 			"Il percorso si approfondisce sulla scia di personaggi biblici, con crescita nella responsabilità e impegno stabile in oratorio.",
 	},
 	{
-		titolo: "Gruppo Giovani",
-		fascia: "dai 19 anni",
+		titolo: "Gruppo Giovanotti",
+		fascia: "dai 19 anni in sù",
 		descrizione:
 			"Appuntamento settimanale per coltivare interiorità, fraternità e responsabilità nella vita personale e comunitaria.",
 	},

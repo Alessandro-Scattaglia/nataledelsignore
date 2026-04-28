@@ -1,14 +1,23 @@
 :root {
   --color-primary: #002440;
   --color-secondary: #006a9c;
-  --color-accent: #fec000;
-  --color-green: #96d500;
-  --color-red: #e65263;
-  --color-dark-red: #9c0000;
-  --color-text: #464646;
+  --color-accent: #ffcc00;
+
+  --color-gold-light: #fff3b0;
+  --color-gold-dark: #c89e00;
+
+  --color-blue-light: #e8f3fa;
+  --color-blue-mid: #004a78;
+
+  --color-text: #3c4d58;
   --color-bg: #ffffff;
-  --color-bg-light: #f5f7fa;
+  --color-bg-light: #f3f7fc;
+  --color-bg-warm: #fefcf0;
+
   --shadow-soft: 0 10px 30px rgba(0, 36, 64, 0.1);
+  --shadow-card: 0 10px 26px rgba(0, 36, 64, 0.09);
+  --shadow-raised: 0 18px 44px rgba(0, 36, 64, 0.12);
+
   --scrollbar-thumb: rgba(0, 36, 64, 0.25);
   --scrollbar-thumb-hover: rgba(0, 36, 64, 0.4);
 }
@@ -41,7 +50,6 @@
 *::-webkit-scrollbar-corner {
   background: transparent;
 }
-
 
 body {
   color: var(--color-text);
@@ -232,7 +240,8 @@ textarea {
  */
 
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
@@ -242,7 +251,8 @@ input { /* 1 */
  */
 
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
